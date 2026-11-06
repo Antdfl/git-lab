@@ -16,3 +16,4 @@ It computes consumption from cumulative meter readings.
 ```bash
 python consumption.py
 ```
+## License e MIT
