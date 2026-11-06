@@ -31,11 +31,15 @@ def compute_consumption(readings):
     for pdr, rows in by_pdr.items():
         rows.sort(key=lambda r: r["reading_date"])
         for prev, curr in zip(rows, rows[1:]):
+            consumption = curr["reading_value"] - prev["reading_value"]
+            if consumption < 0:
+                # Negative value: meter replacement or reset, skip it
+                continue
             result.append(
                 {
                     "pdr": pdr,
                     "period_end": curr["reading_date"],
-                    "consumption": curr["reading_value"] - prev["reading_value"],
+                    "consumption": consumption,
                 }
             )
     return result
