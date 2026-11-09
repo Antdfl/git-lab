@@ -2,7 +2,7 @@
 import csv
 from collections import defaultdict
 
-UNIT = "Smc"
+UNIT = "kWh"
 
 
 def load_readings(path):
