@@ -2,7 +2,7 @@
 import csv
 from collections import defaultdict
 
-UNIT = "kWh"
+UNIT = "m3"
 
 
 def load_readings(path):
